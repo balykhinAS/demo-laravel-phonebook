@@ -53,7 +53,7 @@ class FavoriteController
             $this->service->remove(Auth::id(), $contact->id);
             $result = 'success';
         } catch (\DomainException $e) {
-            $result = 'success';
+            $result = $e->getMessage();
         }
 
         return request()->ajax()
