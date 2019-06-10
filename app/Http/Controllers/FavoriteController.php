@@ -38,7 +38,7 @@ class FavoriteController
 
         return request()->ajax()
             ? response()->json(['result' => $result])
-            : back()->with('success', $result);
+            : back()->with('result', $result);
     }
 
     /**
@@ -57,8 +57,8 @@ class FavoriteController
         }
 
         return request()->ajax()
-            ? response()->json()
-            : back()->with('success', $result);
+            ? response()->json(['result' => $result])
+            : back()->with('result', $result);
     }
 
     /**
